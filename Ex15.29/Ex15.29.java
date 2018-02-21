@@ -58,6 +58,8 @@ public class Ex1529 extends Application {
     });
     
     Scene scene = new Scene(pane, 300, 300);
+    // Add the CSS to scene
+    scene.getStylesheets().add("ex1529/stylesheet.css");
     primaryStage.setTitle("Exercise 15.29");
     primaryStage.setScene(scene);
     primaryStage.show();
