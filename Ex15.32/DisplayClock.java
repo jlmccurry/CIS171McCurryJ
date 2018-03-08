@@ -1,3 +1,4 @@
+/// good use of class, inheritance and methods
 import java.util.Timer;
 import java.util.TimerTask;
 import javafx.animation.KeyFrame;
