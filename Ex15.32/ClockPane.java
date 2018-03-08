@@ -1,3 +1,4 @@
+/// After spring break, a complete header comment will be required for each class
 import java.util.Calendar; 
 import java.util.GregorianCalendar;
 import java.util.Timer;
