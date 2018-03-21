@@ -19,50 +19,52 @@ import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+// I would like to see a full program header comment - program name, your name, date and description. I will start marking off after Unit 2 exam.  :)
 
 /**
  *
  * @author jlmcc
  */
 public class Ex1529 extends Application {
-    
+ // Indent your code!!!!!!!!   
     @Override
     public void start(Stage primaryStage) {
-    HBox hbox = new HBox(5);
-    Button btnPause = new Button("Pause");
-    Button btnResume = new Button("Resume");
-    hbox.setAlignment(Pos.CENTER);
-    hbox.getChildren().addAll(btnPause,btnResume);
-    
-    BorderPane pane = new BorderPane();
-    pane.setBottom(hbox);
-    
-    CarPane car1 = new CarPane();
-    pane.setLeft(car1);
-    pane.setAlignment(car1, Pos.BOTTOM_LEFT);
-    
-    int duration = 10000;
-    PathTransition pt = new PathTransition(Duration.millis(duration), new Line(0,280,300,280), car1);
-    pt.setRate(1.0);
-    pt.setCycleCount(5);
-    pt.play();
-    
-    btnPause.setOnAction(e -> pt.pause());
-    btnResume.setOnAction(e -> pt.play());
-    
-    pane.setOnKeyPressed(e -> {
-        switch (e.getCode()){
-            case RIGHT: pt.setRate(pt.getRate() + 1.0); break;
-            case LEFT: pt.setRate(pt.getRate() - 1.0); break;
-        }
-    });
-    
-    Scene scene = new Scene(pane, 300, 300);
-    // Add the CSS to scene
-    scene.getStylesheets().add("ex1529/stylesheet.css");
-    primaryStage.setTitle("Exercise 15.29");
-    primaryStage.setScene(scene);
-    primaryStage.show();
+        HBox hbox = new HBox(5);
+        Button btnPause = new Button("Pause");
+        Button btnResume = new Button("Resume");
+        hbox.setAlignment(Pos.CENTER);
+        hbox.getChildren().addAll(btnPause,btnResume);
+
+        BorderPane pane = new BorderPane();
+        pane.setBottom(hbox);
+
+        CarPane car1 = new CarPane();
+        pane.setLeft(car1);
+        pane.setAlignment(car1, Pos.BOTTOM_LEFT);
+
+        int duration = 10000;
+        PathTransition pt = new PathTransition(Duration.millis(duration), new Line(0,280,300,280), car1);
+        pt.setRate(1.0);
+        pt.setCycleCount(5);
+        pt.play();
+
+        btnPause.setOnAction(e -> pt.pause());
+        btnResume.setOnAction(e -> pt.play());
+
+        pane.setOnKeyPressed(e -> {
+            switch (e.getCode()){
+                case RIGHT: pt.setRate(pt.getRate() + 1.0); break;
+                case LEFT: pt.setRate(pt.getRate() - 1.0); break;
+            }
+        });
+
+        Scene scene = new Scene(pane, 300, 300);
+        // Add the CSS to scene
+        // good!
+        scene.getStylesheets().add("ex1529/stylesheet.css");
+        primaryStage.setTitle("Exercise 15.29");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     /**
@@ -73,7 +75,7 @@ public class Ex1529 extends Application {
     }
     
 }
-
+// not properly aligned
     class CarPane extends Pane {
         private double height = 300;
         private double width = 300;
@@ -85,7 +87,7 @@ public class Ex1529 extends Application {
         private Rectangle r = new Rectangle(40, 10);
         //-10,8,-20,16,-20,24,-10,32
         private Polygon p = new Polygon(8,0,16,-10,24,-10,32,0);
-        
+// excellent use of inheritance        
         public CarPane() {
             r.setStroke(Color.GREEN);
             r.setFill(Color.GREEN);

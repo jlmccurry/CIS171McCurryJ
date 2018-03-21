@@ -1,3 +1,5 @@
+This looks really good, but it does not display because the file name has been changed. It must be README.md and this one is README.md.txt  (watch notepad - it always tries to add .txt)
+
 # Exercise 15.29
 
 This project is the solution to Exercise 15.29. The exercise outlined that the program was to simulate car racing. The car is to move from left to right, and when it hits the right end it restarts from the left and continues the same process. The user is to be able to pause and resume the animation, as well as increase and decrease speed with the right and left arrow keys respectively.
