@@ -10,7 +10,9 @@ This project is the solution to Exercise 19.9
 
 The exercise was to write the following method that sorts an ArrayList:
 
+```
 public static <E extends Comparable<E>> void sort(ArrayList<E> list)
+```
   
 I created a series of ArrayLists for Integer, Double, Character, and String and then printed them to demonstrate the order they are in. Using the method defined in the book, I then implimented Collections to perform the sort. Finally, I print the newly sorted ArrayLists to demonstrate that they are properly sorted.
 
