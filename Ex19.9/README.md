@@ -4,40 +4,39 @@ This project is the solution to Exercise 19.9
 
 ## Example Output
 
-This image will display as your example output. Name the image README.jpg in your project folder.
-
 ![Sample Output](README.jpg)
 
 ## Analysis Steps
 
-This section should restate the assignment and explain how you analyzed the requirements in order 
-to develop a solution.
+The exercise was to write the following method that sorts an ArrayList:
+
+public static <E extends Comparable<E>> void sort(ArrayList<E> list)
+  
+I created a series of ArrayLists for Integer, Double, Character, and String and then printed them to demonstrate the order they are in. Using the method defined in the book, I then implimented Collections to perform the sort. Finally, I print the newly sorted ArrayLists to demonstrate that they are properly sorted.
 
 ### Design
 
-How did you approach your program design? Did you use multiple classes to define various objects?
-
-```
-Give examples
-```
+Exercise 19.8 served to demonstrate to me the pitfalls of attempting to impliment an algorithm to perform a task in lieu of leaning on an existing Class such as Collections to do the work. This made Exercise 19.9 as simple as implimenting sort instead of shuffle.
 
 ### Testing
 
-A step by step series of examples that you developed to properly test the program. 
-
-Say what the step will be
+Does the program compile?
 
 ```
-Give the example
+Pass
 ```
 
-And repeat
+Does the program display the ArrayLists before sorting appropriately?
 
 ```
-until finished
+Pass
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Does the program display the ArrayLists appropriately after sorting?
+
+```
+Pass
+```
 
 ## Notes
 
