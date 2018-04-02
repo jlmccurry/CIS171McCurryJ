@@ -2,6 +2,8 @@
 
 This project is the solution to Exercise 19.8
 
+*Edit - Example Output (README.jpg) featured a shuffle that was identical to the original list. Ran again and uploaded a new README.jpg to showcase that the shuffle is indeed functioning for all elements*
+
 ## Example Output
 
 ![Sample Output](README.jpg)
