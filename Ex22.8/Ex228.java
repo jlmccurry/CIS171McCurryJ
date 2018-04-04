@@ -11,9 +11,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.Objects;
 
 /**
  *
@@ -22,21 +20,32 @@ import java.util.Set;
 public class Ex228 {
 
     public static void main(String[] args) {
-        
-        Set<Long> set = new LinkedHashSet<>();
+
         ArrayList<Long> primeLong = new ArrayList<>();
+
+        long max = 1000000;
+        long count = 0;
+        long number = 2;
+        long squareRoot = 1;
         
-        long startNum;
-        long endNum;
-        
-        for(long n = 2; n < 1000000; n++){
-            if(n == 2 || n == 3 || n == 5 || n == 7){
-                primeLong.add(n);
+        while (number <= max){
+            boolean isPrime = true;
+            
+            if (squareRoot * squareRoot < number) squareRoot++;
+            
+            for (int j = 0; j < primeLong.size() && primeLong.get(j) <= squareRoot; j++){
+                if(number % primeLong.get(j) == 0){
+                    isPrime = false;
+                    break;
+                }
+            }    
+            if(isPrime){
+                count++;
+                primeLong.add(number);
             }
-            if(n % 2 != 0 && n % 3 != 0 && n % 5 != 0 && n % 7 != 0){
-                primeLong.add(n);
-            }
+            number++;
         }
+        
         writeFile(primeLong);
         readFile();
     }
@@ -48,7 +57,7 @@ public class Ex228 {
             ObjectOutputStream os = new ObjectOutputStream(file);
             os.writeObject(primes);
             file.close();
-            System.out.println(primes.get(primes.size() - 1) + " values added to file.");
+            System.out.println(primes.size() + " values added to file.");
         }
         catch (FileNotFoundException e){
             e.getMessage();
@@ -66,7 +75,7 @@ public class Ex228 {
             ObjectInputStream os = new ObjectInputStream(file);
             primes = (ArrayList<Long>)os.readObject();
             file.close();
-            System.out.println(primes.get(primes.size() - 1) + " values read from file.");
+            System.out.println(primes.size() + " values read from file.");
         }
         catch (FileNotFoundException e){
             e.getMessage();
