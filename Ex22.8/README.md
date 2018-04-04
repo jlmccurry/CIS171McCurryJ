@@ -8,7 +8,7 @@ This project is the solution to Exercise 22.8
 
 ## Analysis Steps
 
-The exercise was to create a program that finds all prime numbers between 0 and 1,000,000. file. 
+The exercise was to create a program that finds all prime numbers between 0 and 1,000,000.
 
 ### Design
 
@@ -27,19 +27,31 @@ Does the program compile?
 Pass
 ```
 
-Does the program display the ArrayLists before shuffling appropriately?
+Does the program generate prime numbers?
 
 ```
 Pass
 ```
 
-Does the program display the ArrayLists appropriately after shuffling?
+Does the program write to the file?
 
 ```
 Pass
 ```
 
-Does the program display a randomly shuffled ArrayList with different runs?
+Does the program print out the proper number of prime values added after writing to file?
+
+```
+Pass
+```
+
+Does the program read from the file?
+
+```
+Pass
+```
+
+Does the program print out the proper number of prime values added after reading from the file?
 
 ```
 Pass
