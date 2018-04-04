@@ -14,8 +14,8 @@ The exercise was to create a program that finds all prime numbers between 0 and 
 
 The conditions of program were:
 
-+The program must store the prime numbers in a binary data file, named PrimeNumbers.dat
-+To determine if a number is prime, the program should load the prime numbers from the file to an array of the long type with a size of 10000. If no number is a divisor for the new prime number, continue to read the next 10000 prime numbers until a divisor is found or the file is read in full.
+1. The program must store the prime numbers in a binary data file, named PrimeNumbers.dat
+2. To determine if a number is prime, the program should load the prime numbers from the file to an array of the long type with a size of 10000. If no number is a divisor for the new prime number, continue to read the next 10000 prime numbers until a divisor is found or the file is read in full.
 
 If the program is to scrutinize the prime numbers in the file for a divisor up to 1,000,000, then the prime number already exists in the file. This seemed to be a paradoxical requirement, so I created a method to generate prime numbers up to 1,000,000, write it to a file, then read it from the file and provide output. 
 
