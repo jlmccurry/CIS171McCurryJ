@@ -1,4 +1,4 @@
-# Project Title
+# Exercise 16.6
 
 This project is the solution to Exercise 16.6, which asks to create a program that sets the horizontal alignment and column-width of a text field dynamically.
 
