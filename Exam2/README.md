@@ -4,7 +4,7 @@ This project is the solution to Exam 2, which asks to create a program that conv
 
 ## Example Output
 
-![Sample Output](README.jpg)
+![Sample Output](README.JPG)
 
 ## Analysis Steps
 
