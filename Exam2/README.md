@@ -1,4 +1,4 @@
-# Project Title
+# Exam 2
 
 This project is the solution to Exam 2, which asks to create a program that converts US Dollars to Canadian Dollars.
 
