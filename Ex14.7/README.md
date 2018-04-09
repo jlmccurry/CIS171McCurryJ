@@ -4,7 +4,7 @@ This project is the solution to Exercise 14.7.
 
 ## Example Output
 
-![Sample Output](README.jpg)
+![Sample Output](Ex14.7_working.jpg)
 
 ## Analysis Steps
 
