@@ -8,7 +8,7 @@ This project is the solution to Exercise 23.12
 
 ## Analysis Steps
 
-The exercise was to create a program that demonstrates a radix sort by sorting a list of 1,000,000 random integers.
+The exercise was to create a program that demonstrates a radix sort by sorting a list of 1,000,000 random integers. The vast majority of the analysis went into the radix sort itself, and the means that I could accomplish it in java.
 
 ### Design
 
