@@ -15,20 +15,37 @@ public class Ex2312 {
 
     public static void main(String[] args) {
         
-        ArrayList<Integer> list = new ArrayList<>();
+        // Create two lists - one to fulfill the requirements of the exercise, and one to demonstrate the sort functions
+        ArrayList<Integer> bigList = new ArrayList<>();
+        ArrayList<Integer> smallList = new ArrayList<>();
         
-        // Generate 1,000,000 random integers and store it in a list
+        // Populate the big list with 1 million random integers
         for(int i = 0; i < 1000000; i++){
             Random rand = new Random();
             int randomNum = rand.nextInt(999);
-            list.add(i, randomNum);
+            bigList.add(i, randomNum);
         }
-        System.out.println(list);
-        list = radixSort(list);
-        System.out.println(list);
-        System.out.println(list.size() + " integers sorted");
-        // Not working
-        System.out.println("The smallest integer is " + getMin(list));
+        
+        // Populate the small list with 100 random integers
+        for(int i = 0; i < 100; i++){
+            Random rand = new Random();
+            int randomNum = rand.nextInt(999);
+            smallList.add(i, randomNum);
+        }
+        
+        // Report the bigList before and after sort, and the number of integers sorted
+        System.out.println(bigList);
+        bigList = radixSort(bigList);
+        System.out.println(bigList);
+        System.out.println(bigList.size() + " integers sorted");
+        System.out.println();
+        
+        // Report the smallList before and after sort, and the number of integers sorted
+        System.out.println(smallList);
+        smallList = radixSort(smallList);
+        System.out.println(smallList);
+        System.out.println(smallList.size() + " integers sorted");
+
     }
     
     public static ArrayList<Integer> radixSort(ArrayList<Integer> list){
@@ -64,21 +81,6 @@ public class Ex2312 {
             place *= modulus;
         }
         return list;
-    }
-    
-    // Not working
-    public static int getMin(ArrayList<Integer> list){
-        int min = 0;
-        int count = 0;
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i) == min){
-                count += 1;
-            }
-        }
-        if(count > 0){
-            min = count;
-        }
-        return count;
     }
        
 }
