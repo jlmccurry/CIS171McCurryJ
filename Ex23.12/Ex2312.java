@@ -34,6 +34,8 @@ public class Ex2312 {
         }
         
         // Report the bigList before and after sort, and the number of integers sorted
+        System.out.println("Radix Sort Demo");
+        System.out.println();
         System.out.println(bigList);
         bigList = radixSort(bigList);
         System.out.println(bigList);
