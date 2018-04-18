@@ -8,16 +8,75 @@ This project is the solution to Exam 3
 
 ## Analysis Steps
 
-
+The assignment was to create a program that obtains the execution time for a selection sort, radix sort, bubble sort, merge sort, quick sort, and heap sort for input size 50000, 100,000, 150,000, 200,000, 250,000, and 300,000. The data should be presented in a table.
 
 ### Design
 
-
-
+I began by getting the nodes of the program functional and having everything in place to present the information. I decided to set up a separate class to store the sort methods as well as a few methods for obtaining the execution time. If time was not a factor, I would've created a method to handle the execution of each sort for each set of random integers, as well as tried to improve the run time.
 
 ### Testing
 
 Does the program compile and run?
+
+```
+Pass
+```
+
+Do each of the sorts return a value for 50000 integers?
+
+```
+Pass
+```
+
+Do the run times for each sort of 50000 integers populate in the appropriate row?
+
+```
+Pass
+```
+
+Do each of the sorts return a value for 100000 integers?
+
+```
+Pass
+```
+
+Do the run times for each sort of 100000 integers populate in the appropriate row?
+
+```
+Pass
+```
+
+Do each of the sorts return a value for 150000 integers?
+
+```
+Pass
+```
+
+Do the run times for each sort of 150000 integers populate in the appropriate row?
+
+```
+Pass
+```
+
+Do each of the sorts return a value for 200000 integers?
+
+```
+Pass
+```
+
+Do the run times for each sort of 200000 integers populate in the appropriate row?
+
+```
+Pass
+```
+
+Do each of the sorts return a value for 250000 integers?
+
+```
+Pass
+```
+
+Do the run times for each sort of 250000 integers populate in the appropriate row?
 
 ```
 Pass
