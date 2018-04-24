@@ -11,7 +11,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 /**
@@ -19,89 +23,59 @@ import javafx.stage.Stage;
  * @author jlmcc
  */
 public class Ex247 extends Application {
+    public LinkedList<Integer> list = new LinkedList<>();
+    private LinkedListView view = new LinkedListView();
+    private LinkedList<Integer> workList = new LinkedList();
+    private TextField txtFldIndex = new TextField();
+    private TextField txtFldValue = new TextField();
+    private Label txtIndex = new Label("Index", txtFldIndex);
+    private Label txtValue = new Label("Value", txtFldValue);
+    private Button btnDelete = new Button("Delete");
+    private Button btnInsert = new Button("Insert");
+    private Button btnSearch = new Button("Search");
     
     @Override
     public void start(Stage primaryStage) {
         BorderPane pane = new BorderPane();
-        VBox vbox = new VBox();
+        HBox hbox = new HBox();
         pane.setPadding(new Insets(5,5,5,5));
-        vbox.setPadding(new Insets(5,5,5,5));
-        pane.setBottom(vbox);
-        //vbox.setAlignment(Pos.CENTER);
-        LinkedList<Integer> list = new LinkedList();
-        LinkedList<Integer> workList = new LinkedList();
-        
-        TextField listFld = new TextField();
-        pane.setCenter(listFld);
-        listFld.setText(list.toString());
-        
-        TextField txtFld1 = new TextField();
-        //Label lbl1 = new Label("Search", txtFld1);
-        //lbl1.setContentDisplay(ContentDisplay.RIGHT);
-        txtFld1.setPrefWidth(100);
-        Button btn1 = new Button("Search");
+        hbox.setPadding(new Insets(5,5,5,5));
+        hbox.setAlignment(Pos.CENTER);
+        pane.setCenter(view);
+        pane.setBottom(hbox);
 
-        TextField txtFld2 = new TextField();
-        //Label lbl2 = new Label("Delete", txtFld2);
-        //lbl2.setContentDisplay(ContentDisplay.RIGHT);
-        txtFld2.setPrefWidth(100);
-        Button btn2 = new Button("Delete");
+        txtFldIndex.setPrefWidth(100);
+        txtFldValue.setPrefWidth(100);
+        txtIndex.setContentDisplay(ContentDisplay.RIGHT);
+        txtValue.setContentDisplay(ContentDisplay.RIGHT);
         
-        TextField txtFld3 = new TextField();
-        //Label lbl3 = new Label("Insert", txtFld3);
-        //lbl3.setContentDisplay(ContentDisplay.RIGHT);
-        txtFld3.setPrefWidth(100);
-        Button btn3 = new Button("Insert");
+  
+        hbox.getChildren().addAll(txtIndex, txtValue, btnDelete, btnInsert, btnSearch);
         
-        //vbox.getChildren().addAll(lbl1, btn1, lbl2, btn2, lbl3, btn3);
-        vbox.getChildren().addAll(txtFld1, btn1, txtFld2, btn2, txtFld3, btn3);
-        
-        btn1.setOnAction(e -> {
-            while(!txtFld1.getText().isEmpty()){
-                String txtFldString = txtFld1.getText();
-                int value = Integer.parseInt(txtFldString);
-                if(list.isEmpty()){
-                    System.out.println("List is empty");
-                    break;
-                }
-                boolean search = searchList(list, value);
-                if(search = false){
-                    //System.out.println("Value " + value + " not found");
-                    break;
-                }
-                if(search = true){
-                    System.out.println("Value " + value + " found.");
-                    System.out.println(search);
-                    break;
-                }
+        btnDelete.setOnAction(e -> {
+            if(!list.contains(Integer.parseInt(txtValue.getText()))){
+                System.out.println("Key not found in list");
             }
-            
-            
-            
-        });
-        
-        btn2.setOnAction(e -> {
-            while(!txtFld2.getText().isEmpty()){
-                String txtFldString = txtFld2.getText();
-                int value = Integer.parseInt(txtFldString);
-                if(list.isEmpty()){
-                    System.out.println("List is empty");
-                    break;
-                }
-                else{
-                    listFld.setText(deleteList(list, value).toString());
-                }
+            else{
+                list.remove(new Integer(Integer.parseInt(txtValue.getText())));
+                view.repaint();
             }
         });
         
-        btn3.setOnAction(e -> {
-            while(!txtFld3.getText().isEmpty()){
-                String txtFldString = txtFld3.getText();
-                int value = Integer.parseInt(txtFldString);
-
-                insertList(list, value);
-                listFld.setText(list.toString());
-                break;
+        btnInsert.setOnAction(e -> {
+            if(!txtFldIndex.getText().trim().isEmpty() && !txtFldValue.getText().trim().isEmpty()){
+                list.add(Integer.parseInt(txtFldIndex.getText()), Integer.parseInt(txtFldValue.getText()));
+                view.repaint();
+            }
+        });
+        
+        btnSearch.setOnAction(e -> {
+            if(!list.contains(Integer.parseInt(txtValue.getText()))){
+                System.out.println("Key not found in list");
+            }
+            else{
+                System.out.println("Key is present in the list");
+                view.repaint();
             }
         });
         
@@ -119,38 +93,55 @@ public class Ex247 extends Application {
         launch(args);
     }
     
-    public boolean searchList(LinkedList<Integer> list, Integer index){
-        boolean flag = false;
-        int value = index;
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i) == value){
-                flag = true;
+    public class LinkedListView extends Pane {
+        private int startX = 20;
+        private int startY = 20;
+        private int contWidth = 50;
+        private int contHeight = 20;
+        private int lineLength = 30;
+        private int hGap = 80;
+        
+        protected void repaint() {
+            getChildren().clear();
+            if(list.size() == 0){
+                getChildren().add(new Text(startX, startY, "head: null"));
+                getChildren().add(new Text(startX, startY + 15, "tail: null"));
+            }
+            else{
+                getChildren().add(new Text(startX, startY, "head"));
+                int x = startX + 30;
+                int y = startY + 20;
+                drawLine(startX + 5, startY, x, y);
+                for(int i = 0; i < list.size(); i++){
+                    Rectangle box = new Rectangle(x, y, contWidth, contHeight);
+                    box.setFill(Color.WHITE);
+                    box.setStroke(Color.BLACK);
+                    getChildren().add(box);
+                    getChildren().add(new Line(x + lineLength, y, x + lineLength, y + contHeight));
+                    
+                    if(i < list.size() - 1){
+                        drawLine(x + 40, y + contHeight / 2, x + hGap, y + contHeight / 2);
+                        getChildren().add(new Text(x + 10, y + 15, list.get(i) + ""));
+                        x = x + hGap;
+                    }
+                }
+                getChildren().add(new Text(x, startY, "tail"));
+                drawLine(x, startY, x = hGap, y);
+                
             }
         }
-        return flag;
-    }
-    
-    public LinkedList<Integer> insertList(LinkedList<Integer> list, int value){
-        list.add(value);
-        return list;
-    }
-    
-    public LinkedList<Integer> deleteList(LinkedList<Integer> list, int value){
-        int checkVal = value;
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i) == checkVal){
-                list.remove(i);
+        
+        public void drawLine(double x1, double y1, double x2, double y2){
+            getChildren().add(new Line(x1, y1, x2, y2));
+            double slope = ((((double) y1) - (double) y2)) / ((((double) x1) - (((double) x2))));
+            double arc = Math.atan(slope);
+            double set45 = 1.57 / 2;
+            if(x1 < x2){
+                set45 = -1.57 * 1.5;
             }
+            int arrLen = 15;
+            getChildren().add(new Line(x2, y2, (x2 + (Math.cos(arc + set45) * arrLen)), ((y2)) + (Math.sin(arc + set45) * arrLen)));
+            getChildren().add(new Line(x2, y2, (x2 + (Math.cos(arc - set45) * arrLen)), ((y2)) + (Math.sin(arc - set45) * arrLen)));
         }
-        return list;
-    }
-    
-    public static TextField newTextField(int value){
-        String val = Integer.toString(value);
-        TextField txtFld = new TextField(val);
-        txtFld.setPrefWidth(70);
-        return txtFld;
-    }
-
-    
+    }   
 }
