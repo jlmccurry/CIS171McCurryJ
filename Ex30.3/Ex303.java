@@ -5,6 +5,8 @@
  */
 package ex30.pkg3;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.PathTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -28,16 +30,16 @@ public class Ex303 extends Application {
     public ImageView iv = new ImageView("images/us.png");
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws InterruptedException {
         // Create a pane
         HBox hbox = new HBox();
         hbox.setAlignment(Pos.CENTER);
         
         // Add an image view and add it to the pane
-        ImageView iv1 = new ImageView("images/us.png");
+        ImageView iv1 = genFlag();
         hbox.getChildren().add(iv1);
         
-        ImageView iv2 = new ImageView("images/us.png");
+        ImageView iv2 = genFlag();
         hbox.getChildren().add(iv2);
 
         Runnable pt1 = new flagPath(iv1, 0, 0);
@@ -64,14 +66,16 @@ public class Ex303 extends Application {
     }
     
     public ImageView genFlag(){
-        ImageView iv = new ImageView("images/us.png");
-        return iv;
+        ImageView imgView = new ImageView("images/us.png");
+        return imgView;
     }
     
     public class flagPath implements Runnable{
         private PathTransition pt;
         private double y1 = 100;
         private double y2 = 300;
+        
+        
         
         public flagPath(ImageView iv, double x1, double x2){
             PathTransition path = new PathTransition(Duration.millis(10000),
@@ -83,6 +87,11 @@ public class Ex303 extends Application {
         @Override
         
         public void run(){
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Ex303.class.getName()).log(Level.SEVERE, null, ex);
+            }
             pt.play();
         }
     }
