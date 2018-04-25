@@ -8,11 +8,11 @@ This project is the solution to Exercise 30.3
 
 ## Analysis Steps
 
-The exercise was to 15.13 using a thread to animate a flag being raised
+The exercise was to 15.13 using a thread to animate a flag being raised. 
 
 ### Design
 
-As of the due date 4/10/2018 this program is only partially functional. Inserting values works. Searching for values always returns a success, and deleting does not work at all. To my own detriment Exercise 23.12 received most of my attention, and Exercise 24.7 suffered. I will continue to work after the due date to get it functional.
+Design was in two phases - the first to get listing 15.13 functional, and then to impliment the use of threads. The program currently exhibits different behavior with each run. The flags will either be fixed side by side and no path generated or started, one flag will animate, or both will animate. 
 
 ### Testing
 
@@ -22,35 +22,19 @@ Does the program compile?
 Pass
 ```
 
-Does the program display the LinkedList
+Does the program display two flags?
 
 ```
 Pass
 ```
 
-Does the program allow insertion of values to the LinkedList
+Do the flags animate?
 
 ```
-Pass
+Pass w/ conditions
 ```
 
-Does the program successfully search for a value in the LinkedList
 
-```
-Fail
-```
-
-Does the program successfully delete a value from the LinkedList
-
-```
-Fail
-```
-
-Does the program print out the proper number of prime values added after reading from the file?
-
-```
-Pass
-```
 
 ## Notes
 
