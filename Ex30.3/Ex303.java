@@ -52,8 +52,8 @@ public class Ex303 extends Application {
         thread2.start();
         
         // Create a scene and place it in the stage
-        Scene scene = new Scene(hbox, 1000, 500);
-        primaryStage.setTitle("FlagRisingAnimation"); // Set stage title
+        Scene scene = new Scene(hbox, 950, 500);
+        primaryStage.setTitle("Exercise 30.3"); // Set stage title
         primaryStage.setScene(scene); // Place scene in stage
         primaryStage.show(); // Display stage
     }
@@ -72,11 +72,9 @@ public class Ex303 extends Application {
     
     public class flagPath implements Runnable{
         private PathTransition pt;
-        private double y1 = 100;
-        private double y2 = 300;
-        
-        
-        
+        private double y1 = 300;
+        private double y2 = 100;
+
         public flagPath(ImageView iv, double x1, double x2){
             PathTransition path = new PathTransition(Duration.millis(10000),
                 new Line(x1, y1, x2, y2), iv);
