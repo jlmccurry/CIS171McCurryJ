@@ -1,4 +1,5 @@
 # ClockPane
+<!-- looks good - I had to create the README.md file under the correct name to get it to display correctly -->
 
 This project is the solution for Exercise 15.32. The exercise instructed to modify listing 14.21 (ClockPane.java) to add animation into the class as well as a start() and stop() method that allows the user to control the clock
 
