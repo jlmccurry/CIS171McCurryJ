@@ -1,6 +1,6 @@
-# Exercise 16.6
+# Exercise 30.3
 
-This project is the solution to Exercise 16.6, which asks to create a program that sets the horizontal alignment and column-width of a text field dynamically.
+This project is the solution to Exercise 30.3
 
 ## Example Output
 
@@ -8,57 +8,37 @@ This project is the solution to Exercise 16.6, which asks to create a program th
 
 ## Analysis Steps
 
-I began with getting the GUI appearance set and functioning. I then created the ControlPane.java class to manage the creation of textfields, setters, and getters. Finally, I set about making the actual controls perform their function.
+The exercise was to 15.13 using a thread to animate a flag being raised. 
 
 ### Design
 
-I wanted to implement a second class mostly to practice encapsulation and organize the heavy lifting of the program. 
-
-```
-newTextField() and newLabel() are good examples
-```
+Design was in two phases - the first to get listing 15.13 functional, and then to impliment the use of threads. The program currently exhibits different behavior with each run. The flags will either be fixed side by side and no path generated or started, one flag will animate, or both will animate. 
 
 ### Testing
 
-1. Does the application run without error?
+Does the program compile?
 
 ```
 Pass
 ```
 
-2. Do the nodes appear and allow interaction?
+Does the program display two flags?
 
 ```
 Pass
 ```
 
-3. Do the Left/Center/Right radio buttons align text appropriately?
+Do the flags animate?
 
 ```
-Pass
+Pass w/ conditions
 ```
 
-4. Do the Left/Center/Right radio buttons throw an error if all fields are blank?
 
-```
-Pass
-```
-
-5. Does the Left/Center/Right radio buttons throw an error if only column width is populated?
-
-```
-Pass
-```
-
-6. Do the Left/Center/Right radio buttons align text appropriately while column width is blank?
-
-```
-Pass
-```
 
 ## Notes
 
-N/A
+Explain any issues or testing instructions.
 
 ## Do not change content below this line
 ## Adapted from a README Built With

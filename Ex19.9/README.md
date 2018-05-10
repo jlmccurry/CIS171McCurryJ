@@ -1,6 +1,6 @@
-# Exercise 16.6
+# Exercise 19.9
 
-This project is the solution to Exercise 16.6, which asks to create a program that sets the horizontal alignment and column-width of a text field dynamically.
+This project is the solution to Exercise 19.9
 
 ## Example Output
 
@@ -8,49 +8,33 @@ This project is the solution to Exercise 16.6, which asks to create a program th
 
 ## Analysis Steps
 
-I began with getting the GUI appearance set and functioning. I then created the ControlPane.java class to manage the creation of textfields, setters, and getters. Finally, I set about making the actual controls perform their function.
+The exercise was to write the following method that sorts an ArrayList:
+
+```
+public static <E extends Comparable<E>> void sort(ArrayList<E> list)
+```
+  
+I created a series of ArrayLists for Integer, Double, Character, and String and then printed them to demonstrate the order they are in. Using the method defined in the book, I then implimented Collections to perform the sort. Finally, I print the newly sorted ArrayLists to demonstrate that they are properly sorted.
 
 ### Design
 
-I wanted to implement a second class mostly to practice encapsulation and organize the heavy lifting of the program. 
-
-```
-newTextField() and newLabel() are good examples
-```
+Exercise 19.8 served to demonstrate to me the pitfalls of attempting to impliment an algorithm to perform a task in lieu of leaning on an existing Class such as Collections to do the work. This made Exercise 19.9 as simple as implimenting sort instead of shuffle.
 
 ### Testing
 
-1. Does the application run without error?
+Does the program compile?
 
 ```
 Pass
 ```
 
-2. Do the nodes appear and allow interaction?
+Does the program display the ArrayLists before sorting appropriately?
 
 ```
 Pass
 ```
 
-3. Do the Left/Center/Right radio buttons align text appropriately?
-
-```
-Pass
-```
-
-4. Do the Left/Center/Right radio buttons throw an error if all fields are blank?
-
-```
-Pass
-```
-
-5. Does the Left/Center/Right radio buttons throw an error if only column width is populated?
-
-```
-Pass
-```
-
-6. Do the Left/Center/Right radio buttons align text appropriately while column width is blank?
+Does the program display the ArrayLists appropriately after sorting?
 
 ```
 Pass
@@ -58,7 +42,7 @@ Pass
 
 ## Notes
 
-N/A
+Explain any issues or testing instructions.
 
 ## Do not change content below this line
 ## Adapted from a README Built With

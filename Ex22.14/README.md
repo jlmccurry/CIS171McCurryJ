@@ -1,6 +1,6 @@
-# Project Title
+# Exercise 22.14
 
-This project is the solution to Exam 2, which asks to create a program that converts US Dollars to Canadian Dollars.
+This project is the solution to Exercise 22.14
 
 ## Example Output
 
@@ -8,40 +8,34 @@ This project is the solution to Exam 2, which asks to create a program that conv
 
 ## Analysis Steps
 
-I began with getting the GUI appearance set up similar to the example given. Once I was satisfied with it's appearance, I started programming the functionality.
+The exercise was to create a program that measures the execution time for finding all the prime numbers for numbers less than 8000000, 10000000, 12000000, 14000000, and 16000000 using three different algorithms.
 
 ### Design
 
-While my programs through Chapter 16 have made use of at least one additional class to demonstrate proper encapsulation, I decided to keep the program simple given the time constraint and the simplicity of the sample.
+For the sake of simplicity, I opted for sticking to the Java console. I encapsulated each algorithm in it's own method, then went about organizing the data into a table.
 
 
 ### Testing
 
-1. Does the application run without error?
+Does the program compile and run?
 
 ```
 Pass
 ```
 
-2. Do the nodes appear and allow interaction?
+Does the program generate prime numbers?
 
 ```
 Pass
 ```
 
-3. Does the 'Convert' button throw an error when the fields are empty?
+Do each of the algorithm methods work and report back execution time elapsed?
 
 ```
 Pass
 ```
 
-4. Does the 'Convert' button produce an output in the Canadian Dollar textfield if the US Dollar textfield is populated with a number?
-
-```
-Pass
-```
-
-5. Does the program throw an error if a non-number is entered into the US Dollar textfield?
+Does the information display in a table?
 
 ```
 Pass
@@ -49,7 +43,7 @@ Pass
 
 ## Notes
 
-N/A
+Explain any issues or testing instructions.
 
 ## Do not change content below this line
 ## Adapted from a README Built With

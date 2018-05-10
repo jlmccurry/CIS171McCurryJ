@@ -1,6 +1,6 @@
-# Exercise 16.6
+# Exercise 24.7
 
-This project is the solution to Exercise 16.6, which asks to create a program that sets the horizontal alignment and column-width of a text field dynamically.
+This project is the solution to Exercise 24.7
 
 ## Example Output
 
@@ -8,49 +8,49 @@ This project is the solution to Exercise 16.6, which asks to create a program th
 
 ## Analysis Steps
 
-I began with getting the GUI appearance set and functioning. I then created the ControlPane.java class to manage the creation of textfields, setters, and getters. Finally, I set about making the actual controls perform their function.
+The exercise was to create a program that demonstrates, by way of animation, the functions of a LinkedList. The program is to use JavaFX and feature:
+
+1. A Search button that will search for a given value from the list.
+2. A Delete button that will delete a given value from the list.
+3. An Insert button that will insert a given value to the list.
 
 ### Design
 
-I wanted to implement a second class mostly to practice encapsulation and organize the heavy lifting of the program. 
-
-```
-newTextField() and newLabel() are good examples
-```
+As of the due date 4/10/2018 this program is only partially functional. Inserting values works. Searching for values always returns a success, and deleting does not work at all. To my own detriment Exercise 23.12 received most of my attention, and Exercise 24.7 suffered. I will continue to work after the due date to get it functional.
 
 ### Testing
 
-1. Does the application run without error?
+Does the program compile?
 
 ```
 Pass
 ```
 
-2. Do the nodes appear and allow interaction?
+Does the program display the LinkedList
 
 ```
 Pass
 ```
 
-3. Do the Left/Center/Right radio buttons align text appropriately?
+Does the program allow insertion of values to the LinkedList
 
 ```
 Pass
 ```
 
-4. Do the Left/Center/Right radio buttons throw an error if all fields are blank?
+Does the program successfully search for a value in the LinkedList
 
 ```
-Pass
+Fail
 ```
 
-5. Does the Left/Center/Right radio buttons throw an error if only column width is populated?
+Does the program successfully delete a value from the LinkedList
 
 ```
-Pass
+Fail
 ```
 
-6. Do the Left/Center/Right radio buttons align text appropriately while column width is blank?
+Does the program print out the proper number of prime values added after reading from the file?
 
 ```
 Pass
@@ -58,7 +58,7 @@ Pass
 
 ## Notes
 
-N/A
+Explain any issues or testing instructions.
 
 ## Do not change content below this line
 ## Adapted from a README Built With
@@ -90,3 +90,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+

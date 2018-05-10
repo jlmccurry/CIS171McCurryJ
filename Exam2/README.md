@@ -1,22 +1,19 @@
-# Exercise 16.6
+# Exam 2
 
-This project is the solution to Exercise 16.6, which asks to create a program that sets the horizontal alignment and column-width of a text field dynamically.
+This project is the solution to Exam 2, which asks to create a program that converts US Dollars to Canadian Dollars.
 
 ## Example Output
 
-![Sample Output](README.jpg)
+![Sample Output](README.JPG)
 
 ## Analysis Steps
 
-I began with getting the GUI appearance set and functioning. I then created the ControlPane.java class to manage the creation of textfields, setters, and getters. Finally, I set about making the actual controls perform their function.
+I began with getting the GUI appearance set up similar to the example given. Once I was satisfied with it's appearance, I started programming the functionality.
 
 ### Design
 
-I wanted to implement a second class mostly to practice encapsulation and organize the heavy lifting of the program. 
+While my programs through Chapter 16 have made use of at least one additional class to demonstrate proper encapsulation, I decided to keep the program simple given the time constraint and the simplicity of the sample.
 
-```
-newTextField() and newLabel() are good examples
-```
 
 ### Testing
 
@@ -32,25 +29,19 @@ Pass
 Pass
 ```
 
-3. Do the Left/Center/Right radio buttons align text appropriately?
+3. Does the 'Convert' button throw an error when the fields are empty?
 
 ```
 Pass
 ```
 
-4. Do the Left/Center/Right radio buttons throw an error if all fields are blank?
+4. Does the 'Convert' button produce an output in the Canadian Dollar textfield if the US Dollar textfield is populated with a number?
 
 ```
 Pass
 ```
 
-5. Does the Left/Center/Right radio buttons throw an error if only column width is populated?
-
-```
-Pass
-```
-
-6. Do the Left/Center/Right radio buttons align text appropriately while column width is blank?
+5. Does the program throw an error if a non-number is entered into the US Dollar textfield?
 
 ```
 Pass
